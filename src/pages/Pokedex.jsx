@@ -5,7 +5,7 @@ import { v4 as uuvid } from "uuid";
 import "./Pokedex.css";
 import pokeballImg from "../assets/icons/Pokeball.svg";
 import searchImg from "../assets/icons/search.svg";
-import vectorImg from "../assets/icons/Vector.svg";
+import vectorImg from "../assets/icons/searchById.svg";
 
 export default function Pokedex() {
   const {
@@ -27,12 +27,6 @@ export default function Pokedex() {
 
   return (
     <>
-      {/* <Navigation
-        navItems={[
-          { label: "Pokédex" },
-          //{ url: "/", label: "Pokemon Details" },
-        ]}
-      /> */}
       <header>
         <div className="header_title">
           <img
@@ -43,22 +37,24 @@ export default function Pokedex() {
           <h1>Pokédex</h1>
         </div>
         <div className="header_title header_searchBar">
-          <img
-            src={searchImg}
-            alt="search icon"
-            className="searchImg"
-          />
-
-          <input
-            type="text"
-            placeholder="Search"
-            aria-label="Search"
-          />
+          <div className="inputContainer">
+            <img
+              src={searchImg}
+              alt="search icon"
+              className="searchImg"
+            />
+            <input
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+              className="searchInput"
+            />
+          </div>
           <button className="btn_search">
             <img
               src={vectorImg}
-              alt="search by id"
-              className="vectorImg"
+              alt="search by Id icon"
+              className="searchByIdImg"
             />
           </button>
         </div>
