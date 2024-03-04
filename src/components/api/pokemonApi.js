@@ -4,7 +4,7 @@ export function getPokemons() {
   return axiosClient.get("/pokemon");
 }
 
-export function getPokemonsId(id) {
+export function getPokemonById(id) {
   return axiosClient.get(`/pokemon/${id}`);
 }
 
