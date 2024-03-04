@@ -1,0 +1,9 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.nav-item {
+  list-style-type: none;
+}
