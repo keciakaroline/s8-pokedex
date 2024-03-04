@@ -1,8 +1,9 @@
 import Navigation from "../components/Navigation/Navigation";
 import { getPokemons } from "../components/api/pokemonApi";
-import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { v4 as uuvid } from "uuid";
+import "./Pokedex.css";
+import pokeballImg from "../assets/icons/Pokeball.png";
 
 export default function Pokedex() {
   const {
@@ -26,10 +27,18 @@ export default function Pokedex() {
     <>
       {/* <Navigation
         navItems={[
-          { url: "/", label: "Home" },
+          { label: "Pokédex" },
           //{ url: "/", label: "Pokemon Details" },
         ]}
       /> */}
+      <header>
+        <img
+          src={pokeballImg}
+          alt="Pokeball"
+          className="pokeballImg"
+        />
+        <h1>Pokédex</h1>
+      </header>
       <div className="content">
         <div>
           List of pokemons
