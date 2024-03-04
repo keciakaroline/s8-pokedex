@@ -1,0 +1,25 @@
+header {
+  background-color: #dc0a2d;
+  display: flex;
+  flex-direction: row;
+  padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+  gap: 0.5rem;
+  /* width: 22rem; */
+  width: 100vw;
+  height: 6.75rem;
+}
+
+header h1 {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.pokeballImg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+  left: 0.0075rem;
+}
