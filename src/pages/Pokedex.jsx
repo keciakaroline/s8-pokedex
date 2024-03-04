@@ -3,7 +3,9 @@ import { getPokemons } from "../components/api/pokemonApi";
 import { useQuery } from "@tanstack/react-query";
 import { v4 as uuvid } from "uuid";
 import "./Pokedex.css";
-import pokeballImg from "../assets/icons/Pokeball.png";
+import pokeballImg from "../assets/icons/Pokeball.svg";
+import searchImg from "../assets/icons/search.svg";
+import vectorImg from "../assets/icons/Vector.svg";
 
 export default function Pokedex() {
   const {
@@ -32,13 +34,36 @@ export default function Pokedex() {
         ]}
       /> */}
       <header>
-        <img
-          src={pokeballImg}
-          alt="Pokeball"
-          className="pokeballImg"
-        />
-        <h1>Pokédex</h1>
+        <div className="header_title">
+          <img
+            src={pokeballImg}
+            alt="Pokeball image"
+            className="pokeballImg"
+          />
+          <h1>Pokédex</h1>
+        </div>
+        <div className="header_title header_searchBar">
+          <img
+            src={searchImg}
+            alt="search icon"
+            className="searchImg"
+          />
+
+          <input
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="btn_search">
+            <img
+              src={vectorImg}
+              alt="search by id"
+              className="vectorImg"
+            />
+          </button>
+        </div>
       </header>
+
       <div className="content">
         <div>
           List of pokemons
