@@ -99,7 +99,10 @@ export default function Pokedex() {
           </div>
           <div className="header_title header_searchBar">
             <div className="inputContainer">
-              <button onClick={handleSearch}>
+              <button
+                onClick={handleSearch}
+                className="btn_searchImg"
+              >
                 <img
                   src={searchImg}
                   alt="search icon"
