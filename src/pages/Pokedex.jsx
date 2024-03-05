@@ -1,6 +1,6 @@
-import Navigation from "../components/Navigation/Navigation";
-import { getPokemons } from "../components/api/pokemonApi";
-import { useQuery } from "@tanstack/react-query";
+// import Navigation from "../components/Navigation/Navigation";
+import { getPokemonById, getPokemons } from "../components/api/pokemonApi";
+import { useQuery, useQueries } from "@tanstack/react-query";
 import { v4 as uuvid } from "uuid";
 import "./Pokedex.css";
 import pokeballImg from "../assets/icons/Pokeball.svg";
@@ -8,22 +8,28 @@ import searchImg from "../assets/icons/search.svg";
 import vectorImg from "../assets/icons/searchById.svg";
 
 export default function Pokedex() {
-  const {
-    data: pokemons,
-    isLoading,
-    isError,
-    error,
-  } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["pokemons"],
     queryFn: () => getPokemons(),
     staleTime: Infinity,
     refetchOnWindowFocus: false,
+    keepPreviousData: true,
   });
 
-  if (isLoading) return "Loading...";
+  const queryResults = useQueries({
+    queries: data
+      ? data.map((pokemon) => ({
+          queryKey: ["pokemon", pokemon.name],
+          queryFn: () => getPokemonById(pokemon.name),
+          staleTime: Infinity,
+          refetchOnWindowFocus: false,
+          keepPreviousData: true,
+        }))
+      : [],
+  });
 
-  if (error)
-    return "An error has occurred while getting the pokemons: " + error.message;
+  const pokemons = queryResults.map((result) => result.data?.data);
+  //console.log("pokemons", pokemons);
 
   return (
     <>
@@ -60,16 +66,26 @@ export default function Pokedex() {
         </div>
       </header>
 
-      <div className="content">
+      <section className="section_pokedex">
         <div>
-          List of pokemons
-          <ul>
-            {pokemons.map((pokemon) => (
-              <li key={uuvid()}>{pokemon.name}</li>
-            ))}
-          </ul>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : isError ? (
+            <p>
+              An error has occurred while getting the pokemons: {error.message}
+            </p>
+          ) : (
+            <ul>
+              {pokemons.map((pokemon) => (
+                <li key={uuvid()}>
+                  <div>{pokemon?.name}</div>
+                  <img src={pokemon?.sprites.front_default} />
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-      </div>
+      </section>
     </>
   );
 }
