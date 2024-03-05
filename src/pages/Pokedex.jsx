@@ -68,11 +68,12 @@ export default function Pokedex() {
   const renderPokemon = (pokemonList) => {
     return pokemonList.map((pokemon) => {
       return (
-        <Link
-          to={`/${pokemon.name}`}
+        <li
           key={uuvid()}
+          className="pokemonCard"
         >
-          <li
+          <Link
+            to={`/pokemons/${pokemon?.name}/`}
             key={uuvid()}
             className="pokemonCard"
           >
@@ -85,8 +86,8 @@ export default function Pokedex() {
               src={pokemon?.sprites.front_default}
               alt={pokemon?.name}
             />
-          </li>
-        </Link>
+          </Link>
+        </li>
       );
     });
   };
