@@ -11,7 +11,7 @@ export function getPokemons() {
     });
 }
 
-export function getPokemonById(name) {
+export function getPokemonByName(name) {
   return axiosClient.get(`/pokemon/${name}`);
 }
 
