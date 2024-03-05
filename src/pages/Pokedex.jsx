@@ -21,16 +21,16 @@ export default function Pokedex() {
 
   const handleSearch = () => {
     if (searchMode === "id") {
-      console.log("Searching by id");
       const filtered = pokemons.filter((pokemon) =>
         pokemon.id.toString().includes(search)
       );
+
       setFilter(filtered);
     } else if (searchMode === "name") {
-      console.log("Searching by name");
       const filtered = pokemons.filter((pokemon) =>
         pokemon.name.toLowerCase().includes(search.toLowerCase())
       );
+
       setFilter(filtered);
     }
   };
