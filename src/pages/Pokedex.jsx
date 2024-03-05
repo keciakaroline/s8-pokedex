@@ -8,32 +8,14 @@ import vectorId from "../assets/icons/searchById.svg";
 import vectorName from "../assets/icons/searchByName.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { usePokemons } from "../hooks/usePokemons";
 
 export default function Pokedex() {
   const [filter, setFilter] = useState([]);
   const [search, setSearch] = useState("");
   const [searchMode, setSearchMode] = useState("name");
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["pokemons"],
-    queryFn: () => getPokemons(),
-    staleTime: Infinity,
-    refetchOnWindowFocus: false,
-    keepPreviousData: true,
-  });
 
-  const queryResults = useQueries({
-    queries: data
-      ? data.map((pokemon) => ({
-          queryKey: ["pokemon", pokemon.name],
-          queryFn: () => getPokemonByName(pokemon.name),
-          staleTime: Infinity,
-          refetchOnWindowFocus: false,
-          keepPreviousData: true,
-        }))
-      : [],
-  });
-
-  const pokemons = queryResults.map((result) => result.data?.data);
+  const { pokemons, isLoading, isError, error } = usePokemons();
 
   if (isError) return <p>An error has occurred: {error.message}</p>;
 
