@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPokemonSpecies } from "../components/api/pokemonApi";
 
-export const usePokemonDetails = (name) => {
+export const usePokemonSpecies = (name) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["pokemon", name],
     queryFn: () => getPokemonSpecies(name),
@@ -10,7 +10,7 @@ export const usePokemonDetails = (name) => {
     keepPreviousData: true,
   });
 
-  const pokemon = data ? data.data : null;
+  const pokemonSpecie = data ? data.data : null;
 
-  return { pokemon, isLoading, isError, error };
+  return { pokemonSpecie, isLoading, isError, error };
 };
