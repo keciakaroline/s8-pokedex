@@ -15,6 +15,6 @@ export function getPokemonByName(name) {
   return axiosClient.get(`/pokemon/${name}`);
 }
 
-export function getPokemonSpecies() {
-  return axiosClient.get("/pokemon-species");
+export function getPokemonSpecies(name) {
+  return axiosClient.get(`/pokemon-species/${name}`);
 }
