@@ -7,6 +7,7 @@ import searchImg from "../assets/icons/search.svg";
 import vectorId from "../assets/icons/searchById.svg";
 import vectorName from "../assets/icons/searchByName.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Pokedex() {
   const [filter, setFilter] = useState([]);
@@ -67,20 +68,25 @@ export default function Pokedex() {
   const renderPokemon = (pokemonList) => {
     return pokemonList.map((pokemon) => {
       return (
-        <li
+        <Link
+          to={`/${pokemon.name}`}
           key={uuvid()}
-          className="pokemonCard"
         >
-          <div className="pokemonCard_id">
-            #{pokemon?.id.toString().padStart(3, "0")}
-          </div>
-          <div className="pokemonCard_name">{pokemon?.name}</div>
-          <img
-            className="pokemonCard_img"
-            src={pokemon?.sprites.front_default}
-            alt={pokemon?.name}
-          />
-        </li>
+          <li
+            key={uuvid()}
+            className="pokemonCard"
+          >
+            <div className="pokemonCard_id">
+              #{pokemon?.id.toString().padStart(3, "0")}
+            </div>
+            <div className="pokemonCard_name">{pokemon?.name}</div>
+            <img
+              className="pokemonCard_img"
+              src={pokemon?.sprites.front_default}
+              alt={pokemon?.name}
+            />
+          </li>
+        </Link>
       );
     });
   };
