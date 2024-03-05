@@ -33,59 +33,71 @@ export default function Pokedex() {
 
   return (
     <>
-      <header>
-        <div className="header_title">
-          <img
-            src={pokeballImg}
-            alt="Pokeball image"
-            className="pokeballImg"
-          />
-          <h1>Pokédex</h1>
-        </div>
-        <div className="header_title header_searchBar">
-          <div className="inputContainer">
+      <div className="main_container">
+        <header>
+          <div className="header_title">
             <img
-              src={searchImg}
-              alt="search icon"
-              className="searchImg"
+              src={pokeballImg}
+              alt="Pokeball image"
+              className="pokeballImg"
             />
-            <input
-              type="text"
-              placeholder="Search"
-              aria-label="Search"
-              className="searchInput"
-            />
+            <h1>Pokédex</h1>
           </div>
-          <button className="btn_search">
-            <img
-              src={vectorImg}
-              alt="search by Id icon"
-              className="searchByIdImg"
-            />
-          </button>
-        </div>
-      </header>
+          <div className="header_title header_searchBar">
+            <div className="inputContainer">
+              <img
+                src={searchImg}
+                alt="search icon"
+                className="searchImg"
+              />
+              <input
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+                className="searchInput"
+              />
+            </div>
+            <button className="btn_search">
+              <img
+                src={vectorImg}
+                alt="search by Id icon"
+                className="searchByIdImg"
+              />
+            </button>
+          </div>
+        </header>
 
-      <section className="section_pokedex">
-        <div>
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : isError ? (
-            <p>
-              An error has occurred while getting the pokemons: {error.message}
-            </p>
-          ) : (
-            <ul>
-              {pokemons.map((pokemon) => (
-                <li key={uuvid()}>
-                  <div>{pokemon?.name}</div>
-                  <img src={pokemon?.sprites.front_default} />
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </section>
+        <section className="section_pokedex">
+          <div>
+            {isLoading ? (
+              <p>Loading...</p>
+            ) : isError ? (
+              <p>
+                An error has occurred while getting the pokemons:{" "}
+                {error.message}
+              </p>
+            ) : (
+              <ul className="grid_pokedex">
+                {pokemons.map((pokemon) => (
+                  <li
+                    key={uuvid()}
+                    className="pokemonCard"
+                  >
+                    <div className="pokemonCard_id">
+                      #{pokemon?.id.toString().padStart(3, "0")}
+                    </div>
+                    <div className="pokemonCard_name">{pokemon?.name}</div>
+                    <img
+                      className="pokemonCard_img"
+                      src={pokemon?.sprites.front_default}
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      </div>
     </>
   );
 }
