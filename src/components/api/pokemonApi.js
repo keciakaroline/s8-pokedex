@@ -4,7 +4,7 @@ export function getPokemons() {
   return axiosClient
     .get("/pokemon")
     .then((response) => {
-      //console.log("response.data.results", response.data.results);
+      console.log("response.data.results", response.data.results);
       return response.data.results;
     })
     .catch((error) => {
@@ -13,8 +13,8 @@ export function getPokemons() {
     });
 }
 
-export function getPokemonById(id) {
-  return axiosClient.get(`/pokemon/${id}`);
+export function getPokemonById(name) {
+  return axiosClient.get(`/pokemon/${name}`);
 }
 
 export function getPokemonSpecies() {
