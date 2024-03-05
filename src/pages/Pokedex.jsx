@@ -1,5 +1,3 @@
-import { getPokemonByName, getPokemons } from "../components/api/pokemonApi";
-import { useQuery, useQueries } from "@tanstack/react-query";
 import { v4 as uuvid } from "uuid";
 import "./Pokedex.css";
 import pokeballImg from "../assets/icons/Pokeball.svg";
