@@ -1,4 +1,3 @@
-// import Navigation from "../components/Navigation/Navigation";
 import { getPokemonById, getPokemons } from "../components/api/pokemonApi";
 import { useQuery, useQueries } from "@tanstack/react-query";
 import { v4 as uuvid } from "uuid";
@@ -29,7 +28,6 @@ export default function Pokedex() {
   });
 
   const pokemons = queryResults.map((result) => result.data?.data);
-  //console.log("pokemons", pokemons);
 
   return (
     <>

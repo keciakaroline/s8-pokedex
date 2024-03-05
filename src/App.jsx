@@ -13,9 +13,6 @@ const router = createBrowserRouter([
   {
     path: "/:id",
     element: <PokemonDetails />,
-    // children: [
-    //    { path: "player", element: <CreatePlayerForm /> },
-    // ],
   },
 ]);
 
