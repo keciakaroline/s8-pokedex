@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
-import Navigation from "../components/Navigation/Navigation";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function PokemonDetails() {
+  const { id } = useParams();
+  const [pokemonDetail, setPokemonDetail] = useState(null);
+
   return (
     <>
-      {/* <Navigation navItems={[{ url: "/:id", label: "Pokemon Details" }]} /> */}
-      <div className="content">ALGO AQUI</div>
+      <div className="main_container">ALGO AQUI</div>
     </>
   );
 }
