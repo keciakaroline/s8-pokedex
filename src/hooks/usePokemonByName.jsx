@@ -10,7 +10,7 @@ export const usePokemonByName = (name) => {
     keepPreviousData: true,
   });
 
-  const { data: pokemon } = data;
+  const pokemon = data ? data.data : null;
 
   return { pokemon, isLoading, isError, error };
 };
