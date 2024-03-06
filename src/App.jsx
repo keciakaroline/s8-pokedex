@@ -1,31 +1,27 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./pages/Root";
-import Create from "./pages/Create";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PokemonDetails from "./pages/PokemonDetails";
+import Pokedex from "./pages/Pokedex";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
-    children: [
-      {
-        // path: "/",
-        // element: <Statistics />,
-      },
-      {
-        path: "create",
-        element: <Create />,
-        children: [
-          // { path: "player", element: <CreatePlayerForm /> },
-          // { path: "team", element: <CreateTeamForm /> },
-          // { path: "match", element: <CreateMatchForm /> },
-        ],
-      },
-    ],
+    element: <Pokedex />,
+  },
+  {
+    path: "/:id",
+    element: <PokemonDetails />,
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
