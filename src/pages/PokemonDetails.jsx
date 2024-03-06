@@ -56,15 +56,18 @@ export default function PokemonDetails() {
             src={backArrow}
             alt="Back to Pokedex"
           />
-          <h1>{pokemon?.name}</h1>
-          <div className="pokemonDetails_id">
+          <h1 className="pokemonDetails_pokemonName">{pokemon?.name}</h1>
+          <p className="pokemonDetails_id">
             #{pokemon?.id.toString().padStart(3, "0")}
-          </div>
+          </p>
         </header>
 
         <section className="section_about">
           <div>
-            <button onClick="">
+            <button
+              onClick=""
+              className="btn_left_arrow"
+            >
               <img
                 className="pokemon_about_left_arrow"
                 src={arrow_left}
