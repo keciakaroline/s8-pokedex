@@ -5,18 +5,26 @@ import { usePokemonSpecies } from "../hooks/usePokemonSpecies";
 import { usePokemonByName } from "../hooks/usePokemonByName";
 import "./PokemonDetails.css";
 import backArrow from "../assets/icons/back_arrow.svg";
+import { cleanFlavorText } from "../components/utils/formatters";
 
 export default function PokemonDetails() {
   const { id } = useParams();
-  const [pokemonDetail, setPokemonDetail] = useState(null);
+  //const [pokemonDetail, setPokemonDetail] = useState(null);
 
   const { pokemon, isLoading, isError, error } = usePokemonByName(id);
   const { pokemonSpecie, isLoadingSpecie, isErrorSpecie, errorSpecie } =
     usePokemonSpecies(id);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <div>Loading...</div>;
+  if (isLoadingSpecie) return <div>Loading description...</div>;
 
-  if (isError) return <p>An error has occurred: {error.message}</p>;
+  if (isError) return <div>An error has occurred: {error.message}</div>;
+  if (isErrorSpecie) {
+    return <div>Error loading pokemon description: {errorSpecie.message}</div>;
+  }
+
+  console.log("pokemonSpecie", pokemonSpecie);
+  //console.log("pokemon", pokemon);
 
   return (
     <>
@@ -44,11 +52,13 @@ export default function PokemonDetails() {
             <p>{pokemon?.types.map((type) => type.type.name).join("  ")}</p>
           </div>
 
-          {/* <p>
-              <strong>Height:</strong> {pokemon?.height}
-            </p>
+          <div>
+            <h2>About</h2>
             <p>
               <strong>Weight:</strong> {pokemon?.weight}
+            </p>
+            <p>
+              <strong>Height:</strong> {pokemon?.height}
             </p>
             <p>
               <strong>Abilities:</strong>{" "}
@@ -56,17 +66,16 @@ export default function PokemonDetails() {
                 .map((ability) => ability.ability.name)
                 .join(", ")}
             </p>
-            
-       
+          </div>
+          <div>
             <p>
-              <strong>Color:</strong> {pokemonSpecie?.color.name}
+              {cleanFlavorText(
+                pokemonSpecie?.flavor_text_entries?.find(
+                  (entry) => entry.language.name === "en"
+                )?.flavor_text
+              )}
             </p>
-            <p>
-              <strong>Habitat:</strong> {pokemonSpecie?.habitat?.name}
-            </p>
-            <p>
-              <strong>Shape:</strong> {pokemonSpecie?.shape.name}
-            </p> */}
+          </div>
         </section>
         <section className="section_details_stats">
           <div>
