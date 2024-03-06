@@ -63,7 +63,7 @@ export default function Pokedex() {
             <div className="pokemonCard_name">{pokemon?.name}</div>
             <img
               className="pokemonCard_img"
-              src={pokemon?.sprites.front_default}
+              src={pokemon?.sprites?.other?.dream_world?.front_default}
               alt={pokemon?.name}
             />
           </Link>
