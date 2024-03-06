@@ -9,6 +9,26 @@
 
   margin: 0 auto;
   padding: 0;
+
+  --pokemon-type-bug: #a7b723;
+  --pokemon-type-dark: #75574c;
+  --pokemon-type-dragon: #7037ff;
+  --pokemon-type-electric: #f9cf30;
+  --pokemon-type-fairy: #e69eac;
+  --pokemon-type-fighting: #c12239;
+  --pokemon-type-fire: #f57d31;
+  --pokemon-type-flying: #a891ec;
+  --pokemon-type-ghost: #70559b;
+  --pokemon-type-grass: #74cb48;
+  --pokemon-type-ground: #dec16b;
+  --pokemon-type-ice: #9ad6df;
+  --pokemon-type-normal: #aaa67f;
+  --pokemon-type-poison: #a43e9e;
+  --pokemon-type-psychic: #fb5584;
+  --pokemon-type-rock: #b69e31;
+  --pokemon-type-steel: #b7b9d0;
+  --pokemon-type-water: #6493eb;
+  --pokemon-type-neutral: #b8b8b8;
 }
 
 body {
