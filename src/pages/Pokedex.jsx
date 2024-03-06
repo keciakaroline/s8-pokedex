@@ -82,7 +82,7 @@ export default function Pokedex() {
               alt="Pokeball image"
               className="pokeballImg"
             />
-            <h1 className="header_pokedex">Pokédex</h1>
+            <h1 className="header_pokedex_title">Pokédex</h1>
           </div>
           <div className="header_title header_searchBar">
             <div className="inputContainer">
