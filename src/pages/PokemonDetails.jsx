@@ -37,7 +37,10 @@ export default function PokemonDetails() {
     return <div>Error loading pokemon description: {errorSpecie.message}</div>;
   }
 
-  console.log("pokemon", pokemon.sprites.other);
+  // console.log(
+  //   "pokemon",
+  //   pokemon.sprites.other["official-artwork"].front_default
+  // );
 
   return (
     <>
@@ -72,7 +75,7 @@ export default function PokemonDetails() {
             </button>
             <img
               className="pokemon_about_img"
-              src={pokemon?.sprites?.other?.dream_world?.front_default}
+              src={pokemon?.sprites?.other["official-artwork"]?.front_default}
               alt={pokemon?.name}
             />
             <button
@@ -103,7 +106,13 @@ export default function PokemonDetails() {
           </div>
 
           <div>
-            <h2 className="about">About</h2>
+            <h2
+              className={`about_pokemonDetails_main pokemon-type--${
+                pokemon?.types?.[0]?.type.name ?? "normal"
+              }`}
+            >
+              About
+            </h2>
             <div className="pokemon_details_weight">
               <img
                 className="pokemon_weight"
