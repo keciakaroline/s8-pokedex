@@ -75,7 +75,7 @@ export default function Pokedex() {
   return (
     <>
       <div className="main_container">
-        <header>
+        <header className="header_pokedex">
           <div className="header_title">
             <img
               src={pokeballImg}
