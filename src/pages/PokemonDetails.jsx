@@ -40,15 +40,17 @@ export default function PokemonDetails() {
   if (isErrorSpecie) {
     return <div>Error loading pokemon description: {errorSpecie.message}</div>;
   }
-  // {pokemon?.stats.map((stat) => (
-  //   <li key={uuvid()}>
-  //     <span>{stat.stat.name}:</span> {stat.base_stat}
+
   //console.log("pokemonSpecie", pokemonSpecie);
 
   return (
     <>
-      <div className="main_container">
-        <header>
+      <div
+        className={`pokemonDetails_main pokemon-type--${
+          pokemon?.types?.[0]?.type.name ?? "normal"
+        }`}
+      >
+        <header className="pokemonDetails_header">
           <img
             className="pokemonDetails_backArrow"
             src={backArrow}
@@ -59,6 +61,7 @@ export default function PokemonDetails() {
             #{pokemon?.id.toString().padStart(3, "0")}
           </div>
         </header>
+
         <section className="section_about">
           <div>
             <button onClick="">
