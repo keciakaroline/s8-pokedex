@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.header_pokedex {
+.header_pokedex_title {
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
@@ -121,7 +121,6 @@ button img.searchByIdImg {
 
 .main_container {
   height: 100%;
-  left: 129.75rem;
   padding: 0.25rem;
   background-color: #dc0a2d;
 }
