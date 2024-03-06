@@ -185,7 +185,7 @@ export default function PokemonDetails() {
             </p>
           </div>
 
-          <div className="details_stats">
+          <div className="pokemonDetails_stats">
             <div>
               <h2
                 className={`title_pokemonDetails_pokemon-type--${
