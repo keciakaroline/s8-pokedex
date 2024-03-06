@@ -175,7 +175,7 @@ export default function PokemonDetails() {
             </div>
           </div>
 
-          <div>
+          <div className="pokemonDetails_flavorText">
             <p>
               {cleanFlavorText(
                 pokemonSpecie?.flavor_text_entries?.find(
