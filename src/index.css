@@ -5,10 +5,15 @@
   font-style: normal;
   box-sizing: border-box;
   color: #000;
-  background-color: #dc0a2d;
+  background-color: #fff;
 
   margin: 0 auto;
   padding: 0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   --pokemon-type-bug: #a7b723;
   --pokemon-type-dark: #75574c;
