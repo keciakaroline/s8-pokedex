@@ -62,97 +62,97 @@ export default function PokemonDetails() {
           </p>
         </header>
 
-        <section className="section_about">
-          <div className="pokemonDetails_mid">
-            <div className="section_about_pokemon_img_arrows">
-              <button
-                onClick=""
-                className="btn_left_arrow"
-              >
-                <img
-                  className="pokemon_about_left_arrow"
-                  src={arrow_left}
-                  alt="Right arrow to move backwards"
-                />
-              </button>
+        <div className="pokemonDetails_mid">
+          <div className="section_about_pokemon_img_arrows">
+            <button
+              onClick=""
+              className="btn_left_arrow"
+            >
               <img
-                className="pokemon_about_img"
-                src={pokemon?.sprites?.other?.dream_world?.front_default}
-                alt={pokemon?.name}
+                className="pokemon_about_left_arrow"
+                src={arrow_left}
+                alt="Right arrow to move backwards"
               />
-              <button
-                onClick=""
-                className="btn_right_arrow"
-              >
-                <img
-                  className="pokemon_about_right_arrow"
-                  src={arrow_right}
-                  alt="Right arrow to move forward"
-                />
-              </button>
+            </button>
+            <img
+              className="pokemon_about_img"
+              src={pokemon?.sprites?.other?.dream_world?.front_default}
+              alt={pokemon?.name}
+            />
+            <button
+              onClick=""
+              className="btn_right_arrow"
+            >
+              <img
+                className="pokemon_about_right_arrow"
+                src={arrow_right}
+                alt="Right arrow to move forward"
+              />
+            </button>
+          </div>
+        </div>
+
+        <section className="section_about">
+          <div>
+            <p>{pokemon?.types.map((type) => type.type.name)}</p>
+          </div>
+
+          <div>
+            <h2 className="about">About</h2>
+            <div className="pokemon_details_weight">
+              <img
+                className="pokemon_weight"
+                src={weight}
+                alt={`${pokemon?.name} weight`}
+              />
+              <p>{turnDecimal(pokemon?.weight)}Kg</p>
+              <p>Weight</p>
             </div>
 
             <div>
-              <p>{pokemon?.types.map((type) => type.type.name).join("  ")}</p>
+              <img
+                className="divider"
+                src={divider}
+                alt="divider"
+              />
+            </div>
+
+            <div className="pokemon_details_height">
+              <img
+                className="pokemon_height"
+                src={straighten}
+                alt={`${pokemon?.name} height`}
+              />
+              <p>{turnDecimal(pokemon?.height)}m</p>
+              <p>Height</p>
             </div>
 
             <div>
-              <h2 className="about">About</h2>
-              <div className="pokemon_details_weight">
-                <img
-                  className="pokemon_weight"
-                  src={weight}
-                  alt={`${pokemon?.name} weight`}
-                />
-                <p>{turnDecimal(pokemon?.weight)}Kg</p>
-                <p>Weight</p>
-              </div>
-
-              <div>
-                <img
-                  className="divider"
-                  src={divider}
-                  alt="divider"
-                />
-              </div>
-
-              <div className="pokemon_details_height">
-                <img
-                  className="pokemon_height"
-                  src={straighten}
-                  alt={`${pokemon?.name} height`}
-                />
-                <p>{turnDecimal(pokemon?.height)}m</p>
-                <p>Height</p>
-              </div>
-
-              <div>
-                <img
-                  className="divider"
-                  src={divider}
-                  alt="divider"
-                />
-              </div>
-
-              <div className="pokemon_details_abilities">
-                <p>
-                  <strong>Abilities:</strong>{" "}
-                  {pokemon?.abilities
-                    .map((ability) => ability.ability.name)
-                    .join(", ")}
-                </p>
-              </div>
+              <img
+                className="divider"
+                src={divider}
+                alt="divider"
+              />
             </div>
 
-            <div>
+            <div className="pokemon_details_abilities">
               <p>
-                {cleanFlavorText(
-                  pokemonSpecie?.flavor_text_entries?.find(
-                    (entry) => entry.language.name === "en"
-                  )?.flavor_text
-                )}
+                <strong>Abilities:</strong>{" "}
+                {pokemon?.abilities
+                  .map((ability) => ability.ability.name)
+                  .join(", ")}
               </p>
             </div>
+          </div>
+
+          <div>
+            <p>
+              {cleanFlavorText(
+                pokemonSpecie?.flavor_text_entries?.find(
+                  (entry) => entry.language.name === "en"
+                )?.flavor_text
+              )}
+            </p>
           </div>
 
           <div className="details_stats">
