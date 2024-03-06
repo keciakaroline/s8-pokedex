@@ -1,18 +1,3 @@
-.details_stats {
-  height: 100vh;
-}
-
-.statsBar {
-  /* width: 100%; */
-  /* height: 0.25rem; */
-  margin-bottom: 0.3125rem;
-  border-radius: 1rem;
-}
-
-.statsBar_progress {
-  height: 100%;
-}
-
 .pokemonDetails_main.pokemon-type--grass,
 .pokemonDetails_pokemonType--grass {
   background-color: var(--pokemon-type-grass);
@@ -378,7 +363,8 @@
 
 .pokemon_weight_title,
 .pokemon_height_title,
-.pokemonDetails_abilities {
+.pokemonDetails_abilities,
+.pokemonDetails_flavorText {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #1d1d1d;
@@ -411,4 +397,19 @@
   background: #e0e0e0;
   width: 1px;
   height: 48px;
+}
+
+.details_stats {
+  height: 100vh;
+}
+
+.statsBar {
+  /* width: 100%; */
+  /* height: 0.25rem; */
+  margin-bottom: 0.3125rem;
+  border-radius: 1rem;
+}
+
+.statsBar_progress {
+  height: 100%;
 }
