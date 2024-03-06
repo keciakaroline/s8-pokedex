@@ -1,0 +1,90 @@
+.section_details_stats {
+  height: 100vh;
+}
+
+.statsBar {
+  /* width: 100%; */
+  /* height: 0.25rem; */
+  margin-bottom: 0.3125rem;
+  border-radius: 1rem;
+}
+
+.statsBar_progress {
+  height: 100%;
+}
+
+.pokemonDetails_main.pokemon-type--grass {
+  background-color: var(--pokemon-type-grass);
+}
+
+.pokemonDetails_main.pokemon-type--bug {
+  background-color: var(--pokemon-type-bug);
+}
+
+.pokemonDetails_main.pokemon-type--dark {
+  background-color: var(--pokemon-type-dark);
+}
+
+.pokemonDetails_main.pokemon-type--dragon {
+  background-color: var(--pokemon-type-dragon);
+}
+
+.pokemonDetails_main.pokemon-type--electric {
+  background-color: var(--pokemon-type-electric);
+}
+
+.pokemonDetails_main.pokemon-type--fairy {
+  background-color: var(--pokemon-type-fairy);
+}
+
+.pokemonDetails_main.pokemon-type--fighting {
+  background-color: var(--pokemon-type-fighting);
+}
+
+.pokemonDetails_main.pokemon-type--fire {
+  background-color: var(--pokemon-type-fire);
+}
+
+.pokemonDetails_main.pokemon-type--flying {
+  background-color: var(--pokemon-type-flying);
+}
+
+.pokemonDetails_main.pokemon-type--ghost {
+  background-color: var(--pokemon-type-ghost);
+}
+
+.pokemonDetails_main.pokemon-type--ground {
+  background-color: var(--pokemon-type-ground);
+}
+
+.pokemonDetails_main.pokemon-type--ice {
+  background-color: var(--pokemon-type-ice);
+}
+
+.pokemonDetails_main.pokemon-type--normal {
+  background-color: var(--pokemon-type-normal);
+}
+
+.pokemonDetails_main.pokemon-type--poison {
+  background-color: var(--pokemon-type-poison);
+}
+
+.pokemonDetails_main.pokemon-type--psychic {
+  background-color: var(--pokemon-type-psychic);
+}
+
+.pokemonDetails_main.pokemon-type--rock {
+  background-color: var(--pokemon-type-rock);
+}
+
+.pokemonDetails_main.pokemon-type--steel {
+  background-color: var(--pokemon-type-steel);
+}
+
+.pokemonDetails_main.pokemon-type--water {
+  background-color: var(--pokemon-type-water);
+}
+
+/* .pokemonDetails_main.pokemon-type--neutral {
+  background-color: var(--pokemon-type-neutral);
+} */
