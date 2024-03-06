@@ -400,12 +400,6 @@
   margin: 0 auto;
 }
 
-.longDivider {
-  width: 0.0625rem;
-  height: 6rem;
-  margin: 0 auto;
-}
-
 .pokemonDetails_stats {
   height: 100vh;
   background-color: #fff;
@@ -413,6 +407,31 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+}
+
+.statsName {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 0.25rem 0rem 0rem;
+  align-items: end;
+}
+
+.pokemonDetails_stats_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.statsValor {
+  margin: 0 auto;
+}
+
+.longDivider {
+  width: 0.0625rem;
+  height: 6rem;
+  margin: 0 auto;
+  background: black;
 }
 
 .statsBar {
