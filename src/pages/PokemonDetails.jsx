@@ -24,6 +24,15 @@ export default function PokemonDetails() {
   const { pokemonSpecie, isLoadingSpecie, isErrorSpecie, errorSpecie } =
     usePokemonSpecies(id);
 
+  const statNames = {
+    hp: "HP",
+    attack: "ATK",
+    defense: "DEF",
+    "special-attack": "SATK",
+    "special-defense": "SDEF",
+    speed: "SPD",
+  };
+
   if (isLoading) return <div>Loading...</div>;
   if (isLoadingSpecie) return <div>Loading description...</div>;
 
@@ -31,9 +40,10 @@ export default function PokemonDetails() {
   if (isErrorSpecie) {
     return <div>Error loading pokemon description: {errorSpecie.message}</div>;
   }
-
+  // {pokemon?.stats.map((stat) => (
+  //   <li key={uuvid()}>
+  //     <span>{stat.stat.name}:</span> {stat.base_stat}
   //console.log("pokemonSpecie", pokemonSpecie);
-  //console.log("pokemon", pokemon);
 
   return (
     <>
@@ -140,7 +150,7 @@ export default function PokemonDetails() {
             <ul>
               {pokemon?.stats.map((stat) => (
                 <li key={uuvid()}>
-                  <span>{stat.stat.name}:</span> {stat.base_stat}
+                  <span>{statNames[stat.stat.name]}:</span> {stat.base_stat}
                   {/* <span>
                     <img
                       className="divider"
