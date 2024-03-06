@@ -12,5 +12,10 @@ export const usePokemonSpecies = (name) => {
 
   const pokemonSpecie = data ? data.data : null;
 
-  return { pokemonSpecie, isLoading, isError, error };
+  return {
+    pokemonSpecie,
+    isLoadingSpecie: isLoading,
+    isErrorSpecie: isError,
+    error,
+  };
 };
