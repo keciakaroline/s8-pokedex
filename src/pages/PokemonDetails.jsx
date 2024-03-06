@@ -5,7 +5,16 @@ import { usePokemonSpecies } from "../hooks/usePokemonSpecies";
 import { usePokemonByName } from "../hooks/usePokemonByName";
 import "./PokemonDetails.css";
 import backArrow from "../assets/icons/back_arrow.svg";
-import { cleanFlavorText } from "../components/utils/formatters";
+import divider from "../assets/icons/divider.svg";
+import weight from "../assets/icons/weight.svg";
+import straighten from "../assets/icons/straighten.svg";
+import arrow_left from "../assets/icons/arrow_left.svg";
+import arrow_right from "../assets/icons/arrow_right.svg";
+import {
+  cleanFlavorText,
+  turnDecimal,
+  capitalizeName,
+} from "../components/utils/formatters";
 
 export default function PokemonDetails() {
   const { id } = useParams();
@@ -23,7 +32,7 @@ export default function PokemonDetails() {
     return <div>Error loading pokemon description: {errorSpecie.message}</div>;
   }
 
-  console.log("pokemonSpecie", pokemonSpecie);
+  //console.log("pokemonSpecie", pokemonSpecie);
   //console.log("pokemon", pokemon);
 
   return (
@@ -40,12 +49,26 @@ export default function PokemonDetails() {
             #{pokemon?.id.toString().padStart(3, "0")}
           </div>
         </header>
-        <section>
+        <section className="section_about">
           <div>
+            <button onClick="">
+              <img
+                className="pokemon_about_left_arrow"
+                src={arrow_left}
+                alt="Right arrow to move backwards"
+              />
+            </button>
             <img
               src={pokemon?.sprites.front_default}
               alt={pokemon?.name}
             />
+            <button onClick="">
+              <img
+                className="pokemon_about_right_arrow"
+                src={arrow_right}
+                alt="Right arrow to move forward"
+              />
+            </button>
           </div>
 
           <div>
@@ -53,20 +76,53 @@ export default function PokemonDetails() {
           </div>
 
           <div>
-            <h2>About</h2>
-            <p>
-              <strong>Weight:</strong> {pokemon?.weight}
-            </p>
-            <p>
-              <strong>Height:</strong> {pokemon?.height}
-            </p>
-            <p>
-              <strong>Abilities:</strong>{" "}
-              {pokemon?.abilities
-                .map((ability) => ability.ability.name)
-                .join(", ")}
-            </p>
+            <h2 className="about">About</h2>
+            <div className="pokemon_details_weight">
+              <img
+                className="pokemon_weight"
+                src={weight}
+                alt={`${pokemon?.name} weight`}
+              />
+              <p>{turnDecimal(pokemon?.weight)}Kg</p>
+              <p>Weight</p>
+            </div>
+
+            <div>
+              <img
+                className="divider"
+                src={divider}
+                alt="divider"
+              />
+            </div>
+
+            <div className="pokemon_details_height">
+              <img
+                className="pokemon_height"
+                src={straighten}
+                alt={`${pokemon?.name} height`}
+              />
+              <p>{turnDecimal(pokemon?.height)}m</p>
+              <p>Height</p>
+            </div>
+
+            <div>
+              <img
+                className="divider"
+                src={divider}
+                alt="divider"
+              />
+            </div>
+
+            <div className="pokemon_details_abilities">
+              <p>
+                <strong>Abilities:</strong>{" "}
+                {pokemon?.abilities
+                  .map((ability) => ability.ability.name)
+                  .join(", ")}
+              </p>
+            </div>
           </div>
+
           <div>
             <p>
               {cleanFlavorText(
@@ -77,6 +133,7 @@ export default function PokemonDetails() {
             </p>
           </div>
         </section>
+
         <section className="section_details_stats">
           <div>
             <h2>Base Stats</h2>
@@ -84,6 +141,13 @@ export default function PokemonDetails() {
               {pokemon?.stats.map((stat) => (
                 <li key={uuvid()}>
                   <span>{stat.stat.name}:</span> {stat.base_stat}
+                  {/* <span>
+                    <img
+                      className="divider"
+                      src={divider}
+                      alt="divider"
+                    />
+                  </span> */}
                   <span className="statsBar">
                     <progress
                       className="statsBar_progress"
