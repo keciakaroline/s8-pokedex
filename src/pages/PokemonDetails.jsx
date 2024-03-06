@@ -41,7 +41,7 @@ export default function PokemonDetails() {
     return <div>Error loading pokemon description: {errorSpecie.message}</div>;
   }
 
-  //console.log("pokemonSpecie", pokemonSpecie);
+  console.log("pokemon", pokemon.sprites.other);
 
   return (
     <>
@@ -63,119 +63,125 @@ export default function PokemonDetails() {
         </header>
 
         <section className="section_about">
-          <div>
-            <button
-              onClick=""
-              className="btn_left_arrow"
-            >
+          <div className="pokemonDetails_mid">
+            <div className="section_about_pokemon_img_arrows">
+              <button
+                onClick=""
+                className="btn_left_arrow"
+              >
+                <img
+                  className="pokemon_about_left_arrow"
+                  src={arrow_left}
+                  alt="Right arrow to move backwards"
+                />
+              </button>
               <img
-                className="pokemon_about_left_arrow"
-                src={arrow_left}
-                alt="Right arrow to move backwards"
+                className="pokemon_about_img"
+                src={pokemon?.sprites?.other?.dream_world?.front_default}
+                alt={pokemon?.name}
               />
-            </button>
-            <img
-              src={pokemon?.sprites.front_default}
-              alt={pokemon?.name}
-            />
-            <button onClick="">
-              <img
-                className="pokemon_about_right_arrow"
-                src={arrow_right}
-                alt="Right arrow to move forward"
-              />
-            </button>
-          </div>
-
-          <div>
-            <p>{pokemon?.types.map((type) => type.type.name).join("  ")}</p>
-          </div>
-
-          <div>
-            <h2 className="about">About</h2>
-            <div className="pokemon_details_weight">
-              <img
-                className="pokemon_weight"
-                src={weight}
-                alt={`${pokemon?.name} weight`}
-              />
-              <p>{turnDecimal(pokemon?.weight)}Kg</p>
-              <p>Weight</p>
+              <button
+                onClick=""
+                className="btn_right_arrow"
+              >
+                <img
+                  className="pokemon_about_right_arrow"
+                  src={arrow_right}
+                  alt="Right arrow to move forward"
+                />
+              </button>
             </div>
 
             <div>
-              <img
-                className="divider"
-                src={divider}
-                alt="divider"
-              />
-            </div>
-
-            <div className="pokemon_details_height">
-              <img
-                className="pokemon_height"
-                src={straighten}
-                alt={`${pokemon?.name} height`}
-              />
-              <p>{turnDecimal(pokemon?.height)}m</p>
-              <p>Height</p>
+              <p>{pokemon?.types.map((type) => type.type.name).join("  ")}</p>
             </div>
 
             <div>
-              <img
-                className="divider"
-                src={divider}
-                alt="divider"
-              />
+              <h2 className="about">About</h2>
+              <div className="pokemon_details_weight">
+                <img
+                  className="pokemon_weight"
+                  src={weight}
+                  alt={`${pokemon?.name} weight`}
+                />
+                <p>{turnDecimal(pokemon?.weight)}Kg</p>
+                <p>Weight</p>
+              </div>
+
+              <div>
+                <img
+                  className="divider"
+                  src={divider}
+                  alt="divider"
+                />
+              </div>
+
+              <div className="pokemon_details_height">
+                <img
+                  className="pokemon_height"
+                  src={straighten}
+                  alt={`${pokemon?.name} height`}
+                />
+                <p>{turnDecimal(pokemon?.height)}m</p>
+                <p>Height</p>
+              </div>
+
+              <div>
+                <img
+                  className="divider"
+                  src={divider}
+                  alt="divider"
+                />
+              </div>
+
+              <div className="pokemon_details_abilities">
+                <p>
+                  <strong>Abilities:</strong>{" "}
+                  {pokemon?.abilities
+                    .map((ability) => ability.ability.name)
+                    .join(", ")}
+                </p>
+              </div>
             </div>
 
-            <div className="pokemon_details_abilities">
+            <div>
               <p>
-                <strong>Abilities:</strong>{" "}
-                {pokemon?.abilities
-                  .map((ability) => ability.ability.name)
-                  .join(", ")}
+                {cleanFlavorText(
+                  pokemonSpecie?.flavor_text_entries?.find(
+                    (entry) => entry.language.name === "en"
+                  )?.flavor_text
+                )}
               </p>
             </div>
           </div>
 
-          <div>
-            <p>
-              {cleanFlavorText(
-                pokemonSpecie?.flavor_text_entries?.find(
-                  (entry) => entry.language.name === "en"
-                )?.flavor_text
-              )}
-            </p>
-          </div>
-        </section>
-
-        <section className="section_details_stats">
-          <div>
-            <h2>Base Stats</h2>
-            <ul>
-              {pokemon?.stats.map((stat) => (
-                <li key={uuvid()}>
-                  <span>{statNames[stat.stat.name]}:</span> {stat.base_stat}
-                  {/* <span>
+          <div className="details_stats">
+            <div>
+              <h2>Base Stats</h2>
+              <ul>
+                {pokemon?.stats.map((stat) => (
+                  <li key={uuvid()}>
+                    <span>{statNames[stat.stat.name]}:</span> {stat.base_stat}
+                    {/* <span>
                     <img
                       className="divider"
                       src={divider}
                       alt="divider"
                     />
                   </span> */}
-                  <span className="statsBar">
-                    <progress
-                      className="statsBar_progress"
-                      value={stat.base_stat}
-                      style={{
-                        width: `${(stat.base_stat / 255) * 100}%`,
-                      }}
-                    ></progress>
-                  </span>
-                </li>
-              ))}
-            </ul>
+                    <span className="statsBar">
+                      <progress
+                        className="statsBar_progress"
+                        value={stat.base_stat}
+                        style={{
+                          width: `${(stat.base_stat / 255) * 100}%`,
+                        }}
+                      ></progress>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
       </div>
