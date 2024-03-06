@@ -1,162 +1,270 @@
 .pokemonDetails_main.pokemon-type--grass,
-.pokemonDetails_pokemonType--grass {
+.pokemonDetails_pokemonType--grass,
+.statsBar.statsBar_pokemon-type--grass {
   background-color: var(--pokemon-type-grass);
 }
 
-.title_pokemonDetails_pokemon-type--grass {
+.statsBar_progress.statsBar_progress_pokemon-type--grass {
+  background-color: var(--pokemon-type-grass-progress);
+}
+
+.title_pokemonDetails_pokemon-type--grass,
+.stat_pokemonDetails_pokemon-type--grass {
   color: var(--pokemon-type-grass);
 }
 
 .pokemonDetails_main.pokemon-type--bug,
-.pokemonDetails_pokemonType--bug {
+.pokemonDetails_pokemonType--bug,
+.statsBar.statsBar_pokemon-type--bug {
   background-color: var(--pokemon-type-bug);
 }
 
-.title_pokemonDetails_pokemon-type--bug {
+.statsBar_progress.statsBar_progress_pokemon-type--bug {
+  background-color: var(--pokemon-type-bug-progress);
+}
+
+.title_pokemonDetails_pokemon-type--bug,
+.stat_pokemonDetails_pokemon-type--bug {
   color: var(--pokemon-type-bug);
 }
 
 .pokemonDetails_main.pokemon-type--dark,
-.pokemonDetails_pokemonType--dark {
+.pokemonDetails_pokemonType--dark,
+.statsBar.statsBar_pokemon-type--dark {
   background-color: var(--pokemon-type-dark);
 }
 
-.title_pokemonDetails_pokemon-type--dark {
+.statsBar_progress.statsBar_progress_pokemon-type--dark {
+  background-color: var(--pokemon-type-dark-progress);
+}
+
+.title_pokemonDetails_pokemon-type--dark,
+.stat_pokemonDetails_pokemon-type--dark {
   color: var(--pokemon-type-dark);
 }
 
 .pokemonDetails_main.pokemon-type--dragon,
-.pokemonDetails_pokemonType--dragon {
+.pokemonDetails_pokemonType--dragon,
+.statsBar.statsBar_pokemon-type--dragon {
   background-color: var(--pokemon-type-dragon);
 }
 
-.title_pokemonDetails_pokemon-type--dragon {
+.statsBar_progress.statsBar_progress_pokemon-type--dragon {
+  background-color: var(--pokemon-type-dragon-progress);
+}
+
+.title_pokemonDetails_pokemon-type--dragon,
+.stat_pokemonDetails_pokemon-type--dragon {
   color: var(--pokemon-type-dragon);
 }
 
 .pokemonDetails_main.pokemon-type--electric,
-.pokemonDetails_pokemonType--electric {
+.pokemonDetails_pokemonType--electric,
+.statsBar.statsBar_pokemon-type--electric {
   background-color: var(--pokemon-type-electric);
 }
 
-.title_pokemonDetails_pokemon-type--electric {
+.statsBar_progress.statsBar_progress_pokemon-type--electric {
+  background-color: var(--pokemon-type-electric-progress);
+}
+
+.title_pokemonDetails_pokemon-type--electric,
+.stat_pokemonDetails_pokemon-type--electric {
   color: var(--pokemon-type-electric);
 }
 
 .pokemonDetails_main.pokemon-type--fairy,
-.pokemonDetails_pokemonType--fairy {
+.pokemonDetails_pokemonType--fairy,
+.statsBar.statsBar_pokemon-type--fairy {
   background-color: var(--pokemon-type-fairy);
 }
 
-.title_pokemonDetails_pokemon-type--fairy {
+.statsBar_progress.statsBar_progress_pokemon-type--fairy {
+  background-color: var(--pokemon-type-fairy-progress);
+}
+
+.title_pokemonDetails_pokemon-type--fairy,
+.stat_pokemonDetails_pokemon-type--fairy {
   color: var(--pokemon-type-fairy);
 }
 
 .pokemonDetails_main.pokemon-type--fighting,
-.pokemonDetails_pokemonType--fighting {
+.pokemonDetails_pokemonType--fighting,
+.statsBar.statsBar_pokemon-type--fighting {
   background-color: var(--pokemon-type-fighting);
 }
 
-.title_pokemonDetails_pokemon-type--fighting {
+.statsBar_progress.statsBar_progress_pokemon-type--fighting {
+  background-color: var(--pokemon-type-fighting-progress);
+}
+
+.title_pokemonDetails_pokemon-type--fighting,
+.stat_pokemonDetails_pokemon-type--fighting {
   color: var(--pokemon-type-fighting);
 }
 
 .pokemonDetails_main.pokemon-type--fire,
-.pokemonDetails_pokemonType--fire {
+.pokemonDetails_pokemonType--fire,
+.statsBar.statsBar_pokemon-type--fire {
   background-color: var(--pokemon-type-fire);
 }
 
-.title_pokemonDetails_pokemon-type--fire {
+.statsBar_progress.statsBar_progress_pokemon-type--fire {
+  background-color: var(--pokemon-type-fire-progress);
+}
+
+.title_pokemonDetails_pokemon-type--fire,
+.stat_pokemonDetails_pokemon-type--fire {
   color: var(--pokemon-type-fire);
 }
 
 .pokemonDetails_main.pokemon-type--flying,
-.pokemonDetails_pokemonType--flying {
+.pokemonDetails_pokemonType--flying,
+.statsBar.statsBar_pokemon-type--flying {
   background-color: var(--pokemon-type-flying);
 }
 
-.title_pokemonDetails_pokemon-type--flying {
+.statsBar_progress.statsBar_progress_pokemon-type--flying {
+  background-color: var(--pokemon-type-flying-progress);
+}
+
+.title_pokemonDetails_pokemon-type--flying,
+.stat_pokemonDetails_pokemon-type--flying {
   color: var(--pokemon-type-flying);
 }
 
 .pokemonDetails_main.pokemon-type--ghost,
-.pokemonDetails_pokemonType--ghost {
+.pokemonDetails_pokemonType--ghost,
+.statsBar.statsBar_pokemon-type--ghost {
   background-color: var(--pokemon-type-ghost);
 }
 
-.title_pokemonDetails_pokemon-type--ghost {
+.statsBar_progress.statsBar_progress_pokemon-type--ghost {
+  background-color: var(--pokemon-type-ghost-progress);
+}
+
+.title_pokemonDetails_pokemon-type--ghost,
+.stat_pokemonDetails_pokemon-type--ghost {
   color: var(--pokemon-type-ghost);
 }
 
 .pokemonDetails_main.pokemon-type--ground,
-.pokemonDetails_pokemonType--ground {
+.pokemonDetails_pokemonType--ground,
+.statsBar.statsBar_pokemon-type--ground {
   background-color: var(--pokemon-type-ground);
 }
 
-.title_pokemonDetails_pokemon-type--ground {
+.statsBar_progress.statsBar_progress_pokemon-type--ground {
+  background-color: var(--pokemon-type-ground-progress);
+}
+
+.title_pokemonDetails_pokemon-type--ground,
+.stat_pokemonDetails_pokemon-type--ground {
   color: var(--pokemon-type-ground);
 }
 
 .pokemonDetails_main.pokemon-type--ice,
-.pokemonDetails_pokemonType--ice {
+.pokemonDetails_pokemonType--ice,
+.statsBar.statsBar_pokemon-type--ice {
   background-color: var(--pokemon-type-ice);
 }
 
-.title_pokemonDetails_pokemon-type--ice {
+.statsBar_progress.statsBar_progress_pokemon-type--ice {
+  background-color: var(--pokemon-type-ice-progress);
+}
+
+.title_pokemonDetails_pokemon-type--ice,
+.stat_pokemonDetails_pokemon-type--ice {
   color: var(--pokemon-type-ice);
 }
 
 .pokemonDetails_main.pokemon-type--normal,
-.pokemonDetails_pokemonType--normal {
+.pokemonDetails_pokemonType--normal,
+.statsBar.statsBar_pokemon-type--normal {
   background-color: var(--pokemon-type-normal);
 }
 
-.title_pokemonDetails_pokemon-type--normal {
+.statsBar_progress.statsBar_progress_pokemon-type--normal {
+  background-color: var(--pokemon-type-normal-progress);
+}
+
+.title_pokemonDetails_pokemon-type--normal,
+.stat_pokemonDetails_pokemon-type--normal {
   color: var(--pokemon-type-normal);
 }
 
 .pokemonDetails_main.pokemon-type--poison,
-.pokemonDetails_pokemonType--poison {
+.pokemonDetails_pokemonType--poison,
+.statsBar.statsBar_pokemon-type--poison {
   background-color: var(--pokemon-type-poison);
 }
 
-.title_pokemonDetails_pokemon-type--poison {
+.statsBar_progress.statsBar_progress_pokemon-type--poison {
+  background-color: var(--pokemon-type-poison-progress);
+}
+
+.title_pokemonDetails_pokemon-type--poison,
+.stat_pokemonDetails_pokemon-type--poison {
   color: var(--pokemon-type-poison);
 }
 
 .pokemonDetails_main.pokemon-type--psychic,
-.pokemonDetails_pokemonType--psychic {
+.pokemonDetails_pokemonType--psychic,
+.statsBar.statsBar_pokemon-type--psychic {
   background-color: var(--pokemon-type-psychic);
 }
 
-.title_pokemonDetails_pokemon-type--psychic {
+.statsBar_progress.statsBar_progress_pokemon-type--psychic {
+  background-color: var(--pokemon-type-psychic-progress);
+}
+
+.title_pokemonDetails_pokemon-type--psychic,
+.stat_pokemonDetails_pokemon-type--psychic {
   color: var(--pokemon-type-psychic);
 }
 
 .pokemonDetails_main.pokemon-type--rock,
-.pokemonDetails_pokemonType--rock {
+.pokemonDetails_pokemonType--rock,
+.statsBar.statsBar_pokemon-type--rock {
   background-color: var(--pokemon-type-rock);
 }
 
-.title_pokemonDetails_pokemon-type--rock {
+.statsBar_progress.statsBar_progress_pokemon-type--rock {
+  background-color: var(--pokemon-type-rock-progress);
+}
+
+.title_pokemonDetails_pokemon-type--rock,
+.stat_pokemonDetails_pokemon-type--rock {
   color: var(--pokemon-type-rock);
 }
 
 .pokemonDetails_main.pokemon-type--steel,
-.pokemonDetails_pokemonType--steel {
+.pokemonDetails_pokemonType--steel,
+.statsBar.statsBar_pokemon-type--steel {
   background-color: var(--pokemon-type-steel);
 }
 
-.title_pokemonDetails_pokemon-type--steel {
+.statsBar_progress.statsBar_progress_pokemon-type--steel {
+  background-color: var(--pokemon-type-steel-progress);
+}
+
+.title_pokemonDetails_pokemon-type--steel,
+.stat_pokemonDetails_pokemon-type--steel {
   color: var(--pokemon-type-steel);
 }
 
 .pokemonDetails_main.pokemon-type--water,
-.pokemonDetails_pokemonType--water {
+.pokemonDetails_pokemonType--water,
+.statsBar.statsBar_pokemon-type--water {
   background-color: var(--pokemon-type-water);
 }
 
-.title_pokemonDetails_pokemon-type--water {
+.statsBar_progress.statsBar_progress_pokemon-type--water {
+  background-color: var(--pokemon-type-water-progress);
+}
+
+.title_pokemonDetails_pokemon-type--water,
+.stat_pokemonDetails_pokemon-type--water {
   color: var(--pokemon-type-water);
 }
 
@@ -364,7 +472,8 @@
 .pokemon_weight_title,
 .pokemon_height_title,
 .pokemonDetails_abilities,
-.pokemonDetails_flavorText {
+.pokemonDetails_flavorText,
+.statsValor {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #1d1d1d;
@@ -401,7 +510,7 @@
 }
 
 .pokemonDetails_stats {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -409,38 +518,69 @@
   gap: 0.5rem;
 }
 
-.statsName {
-  display: flex;
-  flex-direction: column;
+.statsValor {
   padding: 0rem 0.25rem 0rem 0rem;
-  align-items: end;
+  /* width: 100%; */
+  margin: 0 auto;
+  text-align: right;
 }
 
-.pokemonDetails_stats_body {
+.statsName {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: right;
+
+  padding: 0rem 0.25rem 0rem 0rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pokemonDetails_stats_name {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
 
-.statsValor {
-  margin: 0 auto;
+.pokemonDetails_stats_valor_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemonDetails_stats_table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .longDivider {
   width: 0.0625rem;
   height: 6rem;
   margin: 0 auto;
-  background: black;
-}
-
-.statsBar {
-  width: 100%;
-  height: 0.25rem;
-  margin-bottom: 0.3125rem;
-  border-radius: 1rem;
+  background: #e0e0e0;
 }
 
 .statsBar_progress {
+  box-sizing: border-box;
+  padding: 0rem 11.75rem 0rem 0rem;
+  border-radius: 0.25rem;
+  width: 14rem;
+
+  height: 0.25rem;
+  /* background-color: var(--pokemon-type-grass-progress); */
+}
+
+.statsBar {
+  width: 14rem;
   height: 100%;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pokemon-type-grass);
 }
