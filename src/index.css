@@ -34,6 +34,25 @@
   --pokemon-type-steel: #b7b9d0;
   --pokemon-type-water: #6493eb;
   --pokemon-type-neutral: #b8b8b8;
+
+  --pokemon-type-bug-progress: rgba(167, 183, 35, 0.2);
+  --pokemon-type-dark-progress: rgba(117, 87, 76, 0.2);
+  --pokemon-type-dragon-progress: rgba(112, 55, 255, 0.2);
+  --pokemon-type-electric-progress: rgba(249, 207, 48, 0.2);
+  --pokemon-type-fairy-progress: rgba(230, 158, 172, 0.2);
+  --pokemon-type-fighting-progress: rgba(193, 34, 57, 0.2);
+  --pokemon-type-fire-progress: rgba(245, 125, 49, 0.2);
+  --pokemon-type-flying-progress: rgba(168, 145, 236, 0.2);
+  --pokemon-type-ghost-progress: rgba(112, 85, 155, 0.2);
+  --pokemon-type-grass-progress: rgba(116, 203, 72, 0.2);
+  --pokemon-type-ground-progress: rgba(222, 193, 107, 0.2);
+  --pokemon-type-ice-progress: rgba(154, 214, 223, 0.2);
+  --pokemon-type-normal-progress: rgba(170, 166, 127, 0.2);
+  --pokemon-type-poison-progress: rgba(164, 62, 158, 0.2);
+  --pokemon-type-psychic-progress: rgba(251, 85, 132, 0.2);
+  --pokemon-type-rock-progress: rgba(182, 158, 49, 0.2);
+  --pokemon-type-steel-progress: rgba(183, 185, 208, 0.2);
+  --pokemon-type-water-progress: rgba(100, 147, 235, 0.2);
 }
 
 body {
