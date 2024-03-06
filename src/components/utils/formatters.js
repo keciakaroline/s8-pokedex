@@ -4,10 +4,6 @@ export function cleanFlavorText(flavorText) {
     : "";
 }
 
-export const capitalizeName = (name) => {
-  return name.charAt(0).toUpperCase() + name.slice(1);
-};
-
 export const turnDecimal = (value) => {
   return (value / 10).toFixed(1);
 };
