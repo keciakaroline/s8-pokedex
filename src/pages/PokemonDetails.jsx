@@ -10,11 +10,7 @@ import weight from "../assets/icons/weight.svg";
 import straighten from "../assets/icons/straighten.svg";
 import arrow_left from "../assets/icons/arrow_left.svg";
 import arrow_right from "../assets/icons/arrow_right.svg";
-import {
-  cleanFlavorText,
-  turnDecimal,
-  capitalizeName,
-} from "../components/utils/formatters";
+import { cleanFlavorText, turnDecimal } from "../components/utils/formatters";
 
 export default function PokemonDetails() {
   const { id } = useParams();
@@ -93,8 +89,17 @@ export default function PokemonDetails() {
         </div>
 
         <section className="section_about">
-          <div>
-            <p>{pokemon?.types.map((type) => type.type.name)}</p>
+          <div className="pokemonDetails_pokemonType">
+            {pokemon?.types.map((type) => (
+              <span
+                key={uuvid()}
+                className={`pokemonDetails_pokemonType--${
+                  type.type.name ?? "normal"
+                }`}
+              >
+                {type.type.name}
+              </span>
+            ))}
           </div>
 
           <div>
