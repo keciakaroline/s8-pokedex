@@ -3,7 +3,7 @@ import { getPokemonSpecies } from "../components/api/pokemonApi";
 
 export const usePokemonSpecies = (name) => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["pokemon", name],
+    queryKey: ["pokemonSpecie", name],
     queryFn: () => getPokemonSpecies(name),
     staleTime: Infinity,
     refetchOnWindowFocus: false,
