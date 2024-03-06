@@ -37,11 +37,6 @@ export default function PokemonDetails() {
     return <div>Error loading pokemon description: {errorSpecie.message}</div>;
   }
 
-  // console.log(
-  //   "pokemon",
-  //   pokemon.sprites.other["official-artwork"].front_default
-  // );
-
   return (
     <>
       <div
@@ -186,28 +181,66 @@ export default function PokemonDetails() {
           </div>
 
           <div className="pokemonDetails_stats">
-            <div>
-              <h2
-                className={`title_pokemonDetails_pokemon-type--${
-                  pokemon?.types?.[0]?.type.name ?? "normal"
-                }`}
-              >
-                Base Stats
-              </h2>
-              <ul>
+            {/* <div> */}
+            <h2
+              className={`title_pokemonDetails_pokemon-type--${
+                pokemon?.types?.[0]?.type.name ?? "normal"
+              }`}
+            >
+              Base Stats
+            </h2>
+            {pokemon?.stats.map((stat) => (
+              <div key={uuvid()}>
+                <span
+                  className={`title_pokemonDetails_pokemon-type--${
+                    pokemon?.types?.[0]?.type.name ?? "normal"
+                  }`}
+                >
+                  {statNames[stat.stat.name]}
+                </span>
+                {stat.base_stat}
+                <img
+                  className="longDivider"
+                  src={divider}
+                  alt="divider"
+                />
+                <div className="statsBar">
+                  <progress
+                    className={`title_pokemonDetails_pokemon-type--${
+                      pokemon?.types?.[0]?.type.name ?? "normal"
+                    }`}
+                    value={stat.base_stat}
+                    style={{
+                      width: `${(stat.base_stat / 255) * 100}%`,
+                    }}
+                  ></progress>
+                </div>
+              </div>
+            ))}
+            {/* <ul>
                 {pokemon?.stats.map((stat) => (
                   <li key={uuvid()}>
-                    <span>{statNames[stat.stat.name]}:</span> {stat.base_stat}
-                    {/* <span>
-                    <img
-                      className="divider"
-                      src={divider}
-                      alt="divider"
-                    />
-                  </span> */}
+                    <span
+                      className={`title_pokemonDetails_pokemon-type--${
+                        pokemon?.types?.[0]?.type.name ?? "normal"
+                      }`}
+                    >
+                      {statNames[stat.stat.name]}
+                    </span>{" "}
+                    {stat.base_stat}
+                    <span>
+                      <img
+                        className="divider"
+                        src={divider}
+                        alt="divider"
+                      />
+                    </span>
                     <span className="statsBar">
                       <progress
-                        className="statsBar_progress"
+                        className={`title_pokemonDetails_pokemon-type--${
+                          pokemon?.types?.[0]?.type.name ?? "normal"
+                        }`}
+                        // className="statsBar_progress"
                         value={stat.base_stat}
                         style={{
                           width: `${(stat.base_stat / 255) * 100}%`,
@@ -216,9 +249,9 @@ export default function PokemonDetails() {
                     </span>
                   </li>
                 ))}
-              </ul>
-            </div>
+              </ul> */}
           </div>
+          {/* </div> */}
         </section>
       </div>
     </>
