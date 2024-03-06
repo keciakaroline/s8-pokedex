@@ -107,55 +107,71 @@ export default function PokemonDetails() {
 
           <div>
             <h2
-              className={`about_pokemonDetails_main pokemon-type--${
+              className={`title_pokemonDetails_pokemon-type--${
                 pokemon?.types?.[0]?.type.name ?? "normal"
               }`}
             >
               About
             </h2>
-            <div className="pokemon_details_weight">
-              <img
-                className="pokemon_weight"
-                src={weight}
-                alt={`${pokemon?.name} weight`}
-              />
-              <p>{turnDecimal(pokemon?.weight)}Kg</p>
-              <p>Weight</p>
-            </div>
+            <div className="pokemonDetails_body">
+              <div className="pokemonDetails_section_weight">
+                <div className="pokemonDetails_img_and_valor">
+                  <img
+                    className="pokemon_weight_img"
+                    src={weight}
+                    alt={`${pokemon?.name} weight`}
+                  />
+                  <p className="pokemon_weight_title">
+                    {turnDecimal(pokemon?.weight)}Kg
+                  </p>
+                </div>
 
-            <div>
-              <img
-                className="divider"
-                src={divider}
-                alt="divider"
-              />
-            </div>
+                <div className="pokemon_details_weight">Weight</div>
+              </div>
 
-            <div className="pokemon_details_height">
-              <img
-                className="pokemon_height"
-                src={straighten}
-                alt={`${pokemon?.name} height`}
-              />
-              <p>{turnDecimal(pokemon?.height)}m</p>
-              <p>Height</p>
-            </div>
+              <div>
+                <img
+                  className="divider"
+                  src={divider}
+                  alt="divider"
+                />
+              </div>
 
-            <div>
-              <img
-                className="divider"
-                src={divider}
-                alt="divider"
-              />
-            </div>
+              <div className="pokemonDetails_section_height">
+                <div className="pokemonDetails_img_and_valor">
+                  <img
+                    className="pokemon_height_img"
+                    src={straighten}
+                    alt={`${pokemon?.name} height`}
+                  />
+                  <p className="pokemon_height_title">
+                    {turnDecimal(pokemon?.height)}m
+                  </p>
+                </div>
+                <div className="pokemon_details_height">Height</div>
+              </div>
 
-            <div className="pokemon_details_abilities">
-              <p>
-                <strong>Abilities:</strong>{" "}
-                {pokemon?.abilities
-                  .map((ability) => ability.ability.name)
-                  .join(", ")}
-              </p>
+              <div>
+                <img
+                  className="divider"
+                  src={divider}
+                  alt="divider"
+                />
+              </div>
+
+              <div className="pokemonDetails_section_abilities">
+                <div className="pokemonDetails_abilities">
+                  {pokemon?.abilities.map((ability) => (
+                    <div
+                      key={uuvid()}
+                      className="ability"
+                    >
+                      {ability.ability.name}
+                    </div>
+                  ))}
+                </div>
+                <div className="pokemon_details_abilities">Moves</div>
+              </div>
             </div>
           </div>
 
@@ -171,7 +187,13 @@ export default function PokemonDetails() {
 
           <div className="details_stats">
             <div>
-              <h2>Base Stats</h2>
+              <h2
+                className={`title_pokemonDetails_pokemon-type--${
+                  pokemon?.types?.[0]?.type.name ?? "normal"
+                }`}
+              >
+                Base Stats
+              </h2>
               <ul>
                 {pokemon?.stats.map((stat) => (
                   <li key={uuvid()}>
