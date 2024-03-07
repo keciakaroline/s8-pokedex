@@ -7,17 +7,29 @@ import vectorName from "../assets/icons/searchByName.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { usePokemons } from "../hooks/usePokemons";
+import { INITIAL_PAGE } from "../components/utils/constants";
 
 export default function Pokedex() {
   const [filter, setFilter] = useState([]);
   const [search, setSearch] = useState("");
   const [searchMode, setSearchMode] = useState("name");
+  const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
 
-  const { pokemons, isLoading, isError, error } = usePokemons();
+  const { pokemons, isLoading, isError, error } = usePokemons(currentPage);
 
   if (isError) return <p>An error has occurred: {error.message}</p>;
 
   if (isLoading) return <p>Loading...</p>;
+
+  const handleNextPage = () => {
+    setCurrentPage((page) => page + 1);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((page) => page - 1);
+    }
+  };
 
   const handleSearch = () => {
     if (searchMode === "id") {
@@ -129,6 +141,10 @@ export default function Pokedex() {
                 : renderPokemon(pokemons)}
             </ul>
           </div>
+          <footer>
+            <button onClick={handlePreviousPage}>←</button>
+            <button onClick={handleNextPage}>→</button>
+          </footer>
         </section>
       </div>
     </>
