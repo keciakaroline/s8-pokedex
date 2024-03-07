@@ -4,6 +4,8 @@ import pokeballImg from "../assets/icons/Pokeball.svg";
 import searchImg from "../assets/icons/search.svg";
 import vectorId from "../assets/icons/searchById.svg";
 import vectorName from "../assets/icons/searchByName.svg";
+import arrow_back_bold from "../assets/icons/arrow_back_bold.svg";
+import arrow_forward_bold from "../assets/icons/arrow_forward_bold.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { usePokemons } from "../hooks/usePokemons";
@@ -141,9 +143,25 @@ export default function Pokedex() {
                 : renderPokemon(pokemons)}
             </ul>
           </div>
-          <footer>
-            <button onClick={handlePreviousPage}>←</button>
-            <button onClick={handleNextPage}>→</button>
+          <footer className="footer_pagination">
+            <button
+              className="btn_pagination_left"
+              onClick={handlePreviousPage}
+            >
+              <img
+                src={arrow_back_bold}
+                alt="arrow to goes back one page"
+              />
+            </button>
+            <button
+              className="btn_pagination_right"
+              onClick={handleNextPage}
+            >
+              <img
+                src={arrow_forward_bold}
+                alt="arrow to goes forward one page"
+              />
+            </button>
           </footer>
         </section>
       </div>
