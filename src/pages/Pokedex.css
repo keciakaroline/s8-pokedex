@@ -27,14 +27,14 @@
   line-height: 2rem;
 }
 
-div .pokeballImg {
+.pokeballImg {
   width: 1.5rem;
   height: 1.5rem;
   color: #ffffff;
   left: 0.0075rem;
 }
 
-div.header_title.header_searchBar {
+.header_title.header_searchBar {
   width: 100%;
   height: 2rem;
   gap: 1rem;
@@ -68,7 +68,7 @@ input.searchInput {
   color: #666666;
 }
 
-img.searchImg {
+.searchImg {
   width: 1rem;
   height: 1rem;
   top: 1rem;
@@ -91,7 +91,7 @@ img.searchImg {
   background-color: #fff;
 }
 
-button img.searchByIdImg {
+.searchByIdImg {
   width: 1rem;
   height: 1rem;
   top: 0.1669rem;
@@ -100,7 +100,7 @@ button img.searchByIdImg {
 
 .section_pokedex {
   background-color: #ffffff;
-  height: 100%;
+  height: 80%;
 
   border: 1px solid transparent;
   border-radius: 0.5rem;
@@ -120,7 +120,7 @@ button img.searchByIdImg {
 }
 
 .main_container {
-  height: 100%;
+  height: fit-content;
   padding: 0.25rem;
   background-color: #dc0a2d;
 }
