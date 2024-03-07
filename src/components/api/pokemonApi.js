@@ -1,9 +1,12 @@
 import axiosClient from "./axiosClient";
+import { LIMIT } from "../utils/constants";
 
-export function getPokemons() {
+export function getPokemons(page = 1) {
+  const offset = (page - 1) * LIMIT;
   return axiosClient
-    .get("/pokemon")
+    .get(`/pokemon?offset=${offset}&limit=${LIMIT}`)
     .then((response) => {
+      //console.log("response.data.results", response.data.results);
       return response.data.results;
     })
     .catch((error) => {
