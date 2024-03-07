@@ -6,7 +6,6 @@ export function getPokemons(page = 1) {
   return axiosClient
     .get(`/pokemon?offset=${offset}&limit=${LIMIT}`)
     .then((response) => {
-      //console.log("response.data.results", response.data.results);
       return response.data.results;
     })
     .catch((error) => {
