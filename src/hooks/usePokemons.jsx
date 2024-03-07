@@ -1,10 +1,10 @@
 import { useQuery, useQueries } from "@tanstack/react-query";
 import { getPokemonByName, getPokemons } from "../components/api/pokemonApi";
 
-export const usePokemons = () => {
+export const usePokemons = (page = 1) => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["pokemons"],
-    queryFn: () => getPokemons(),
+    queryKey: ["pokemons", page],
+    queryFn: () => getPokemons(page),
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     keepPreviousData: true,
