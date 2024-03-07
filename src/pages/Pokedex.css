@@ -190,6 +190,25 @@ input.searchInput {
   z-index: 1;
 }
 
+.footer_pagination {
+  padding: 2rem 2rem 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_pagination_left,
+.btn_pagination_right {
+  animation-timing-function: ease-out;
+  animation-duration: 300ms;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  margin: 0.25rem 0.5rem 0.25rem 0.5rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1024px) {
   .header_pokedex {
     height: 8.5rem;
