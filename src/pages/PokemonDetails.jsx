@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuvid } from "uuid";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { usePokemonSpecies } from "../hooks/usePokemonSpecies";
 import { usePokemonByName } from "../hooks/usePokemonByName";
 import "./PokemonDetails.css";
@@ -14,7 +14,7 @@ import { cleanFlavorText, turnDecimal } from "../components/utils/formatters";
 
 export default function PokemonDetails() {
   const { id } = useParams();
-  //const [pokemonDetail, setPokemonDetail] = useState(null);
+  const navigate = useNavigate();
 
   const { pokemon, isLoading, isError, error } = usePokemonByName(id);
   const { pokemonSpecie, isLoadingSpecie, isErrorSpecie, errorSpecie } =
@@ -27,6 +27,18 @@ export default function PokemonDetails() {
     "special-attack": "SATK",
     "special-defense": "SDEF",
     speed: "SPD",
+  };
+
+  const handlePreviousPokemon = () => {
+    if (pokemon && pokemon.id > 1) {
+      navigate(`/pokemons/${pokemon.id - 1}`);
+    }
+  };
+
+  const handleNextPokemon = () => {
+    if (pokemon) {
+      navigate(`/pokemons/${pokemon.id + 1}`);
+    }
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -45,11 +57,17 @@ export default function PokemonDetails() {
         }`}
       >
         <header className="pokemonDetails_header">
-          <img
-            className="pokemonDetails_backArrow"
-            src={backArrow}
-            alt="Back to Pokedex"
-          />
+          <Link
+            to={`/`}
+            key={uuvid()}
+          >
+            <img
+              className="pokemonDetails_backArrow"
+              src={backArrow}
+              alt="Back to Pokedex"
+            />
+          </Link>
+
           <h1 className="pokemonDetails_pokemonName">{pokemon?.name}</h1>
           <p className="pokemonDetails_id">
             #{pokemon?.id.toString().padStart(3, "0")}
@@ -59,7 +77,7 @@ export default function PokemonDetails() {
         <div className="pokemonDetails_mid">
           <div className="section_about_pokemon_img_arrows">
             <button
-              onClick=""
+              onClick={handlePreviousPokemon}
               className="btn_left_arrow"
             >
               <img
@@ -74,7 +92,7 @@ export default function PokemonDetails() {
               alt={pokemon?.name}
             />
             <button
-              onClick=""
+              onClick={handleNextPokemon}
               className="btn_right_arrow"
             >
               <img
