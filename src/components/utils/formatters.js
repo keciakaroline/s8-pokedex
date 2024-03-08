@@ -11,3 +11,13 @@ export const turnDecimal = (value) => {
 export const formatId = (id) => {
   return `#${id?.toString().padStart(3, "0")}`;
 };
+
+export const pokemonType = (types) => {
+  return `${types?.[0]?.type.name} ?? "normal"`;
+};
+
+export const formatStat = (stat) => {
+  return parseInt(stat).toString().padStart(3, "0");
+};
+
+export const calculateWidth = (stat) => `${(stat / 50) * 100}%`;
