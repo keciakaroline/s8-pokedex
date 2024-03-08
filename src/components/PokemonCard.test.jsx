@@ -21,6 +21,7 @@ describe("PokemonCard", () => {
     expect.soft(screen.getByText(formattedId)).toBeInTheDocument();
     expect.soft(screen.getByAltText(pokemonName)).toBeInTheDocument();
   });
+
   it("renders the link for the next page", () => {
     const pokemonName = "bulbasaur";
     const pokemonId = 1;
