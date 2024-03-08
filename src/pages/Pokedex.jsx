@@ -7,7 +7,7 @@ import vectorName from "../assets/icons/searchByName.svg";
 import arrow_back_bold from "../assets/icons/arrow_back_bold.svg";
 import arrow_forward_bold from "../assets/icons/arrow_forward_bold.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import PokemonCard from "../components/PokemonCard";
 import { usePokemons } from "../hooks/usePokemons";
 import { INITIAL_PAGE } from "../components/utils/constants";
 
@@ -62,26 +62,12 @@ export default function Pokedex() {
   const renderPokemon = (pokemonList) => {
     return pokemonList.map((pokemon) => {
       return (
-        <li
+        <PokemonCard
           key={uuvid()}
-          className="pokemonCard"
-        >
-          <Link
-            to={`/pokemons/${pokemon?.name}/`}
-            key={uuvid()}
-            className="pokemonCard"
-          >
-            <div className="pokemonCard_id">
-              #{pokemon?.id.toString().padStart(3, "0")}
-            </div>
-            <div className="pokemonCard_name">{pokemon?.name}</div>
-            <img
-              className="pokemonCard_img"
-              src={pokemon?.sprites?.other["official-artwork"]?.front_default}
-              alt={pokemon?.name}
-            />
-          </Link>
-        </li>
+          name={pokemon?.name}
+          id={pokemon?.id}
+          sprites={pokemon?.sprites?.other["official-artwork"]?.front_default}
+        />
       );
     });
   };
