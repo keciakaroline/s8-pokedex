@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { v4 as uuvid } from "uuid";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { usePokemonSpecies } from "../hooks/usePokemonSpecies";
