@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { v4 as uuvid } from "uuid";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { usePokemonSpecies } from "../hooks/usePokemonSpecies";
@@ -6,11 +5,11 @@ import { usePokemonByName } from "../hooks/usePokemonByName";
 import "./PokemonDetails.css";
 import backArrow from "../assets/icons/back_arrow.svg";
 import divider from "../assets/icons/divider.svg";
-import weight from "../assets/icons/weight.svg";
-import straighten from "../assets/icons/straighten.svg";
 import arrow_left from "../assets/icons/arrow_left.svg";
 import arrow_right from "../assets/icons/arrow_right.svg";
-import { cleanFlavorText, turnDecimal } from "../components/utils/formatters";
+import { cleanFlavorText, pokemonType } from "../components/utils/formatters";
+import PokemonStats from "../components/PokemonStats";
+import PokemonAboutDetails from "../components/PokemonAboutDetails";
 
 export default function PokemonDetails() {
   const { id } = useParams();
@@ -52,9 +51,9 @@ export default function PokemonDetails() {
   return (
     <>
       <div
-        className={`pokemonDetails_main pokemon-type--${
-          pokemon?.types?.[0]?.type.name ?? "normal"
-        }`}
+        className={`pokemonDetails_main pokemon-type--${pokemonType(
+          pokemon?.types
+        )}`}
       >
         <header className="pokemonDetails_header">
           <Link
@@ -120,72 +119,19 @@ export default function PokemonDetails() {
 
           <div>
             <h2
-              className={`title_pokemonDetails_pokemon-type--${
-                pokemon?.types?.[0]?.type.name ?? "normal"
-              }`}
+              className={`title_pokemonDetails_pokemon-type--${pokemonType(
+                pokemon?.types
+              )}`}
             >
               About
             </h2>
-            <div className="pokemonDetails_body">
-              <div className="pokemonDetails_section_weight">
-                <div className="pokemonDetails_img_and_valor">
-                  <img
-                    className="pokemon_weight_img"
-                    src={weight}
-                    alt={`${pokemon?.name} weight`}
-                  />
-                  <p className="pokemon_weight_title">
-                    {turnDecimal(pokemon?.weight)}Kg
-                  </p>
-                </div>
 
-                <div className="pokemon_details_weight">Weight</div>
-              </div>
-
-              <div>
-                <img
-                  className="divider"
-                  src={divider}
-                  alt="divider"
-                />
-              </div>
-
-              <div className="pokemonDetails_section_height">
-                <div className="pokemonDetails_img_and_valor">
-                  <img
-                    className="pokemon_height_img"
-                    src={straighten}
-                    alt={`${pokemon?.name} height`}
-                  />
-                  <p className="pokemon_height_title">
-                    {turnDecimal(pokemon?.height)}m
-                  </p>
-                </div>
-                <div className="pokemon_details_height">Height</div>
-              </div>
-
-              <div>
-                <img
-                  className="divider"
-                  src={divider}
-                  alt="divider"
-                />
-              </div>
-
-              <div className="pokemonDetails_section_abilities">
-                <div className="pokemonDetails_abilities">
-                  {pokemon?.abilities.map((ability) => (
-                    <div
-                      key={uuvid()}
-                      className="ability"
-                    >
-                      {ability.ability.name}
-                    </div>
-                  ))}
-                </div>
-                <div className="pokemon_details_abilities">Moves</div>
-              </div>
-            </div>
+            <PokemonAboutDetails
+              name={pokemon?.name}
+              weight={pokemon?.weight}
+              height={pokemon?.height}
+              abilities={pokemon?.abilities}
+            />
           </div>
 
           <div className="pokemonDetails_flavorText">
@@ -200,9 +146,9 @@ export default function PokemonDetails() {
 
           <div className="pokemonDetails_stats">
             <h2
-              className={`title_pokemonDetails_pokemon-type--${
-                pokemon?.types?.[0]?.type.name ?? "normal"
-              }`}
+              className={`title_pokemonDetails_pokemon-type--${pokemonType(
+                pokemon?.types
+              )}`}
             >
               Base Stats
             </h2>
@@ -214,9 +160,9 @@ export default function PokemonDetails() {
                     className="pokemonDetails_stats_name"
                   >
                     <span
-                      className={`statsName stat_pokemonDetails_pokemon-type--${
-                        pokemon?.types?.[0]?.type.name ?? "normal"
-                      }`}
+                      className={`statsName stat_pokemonDetails_pokemon-type--${pokemonType(
+                        pokemon?.types
+                      )}`}
                     >
                       {statNames[stat.stat.name]}
                     </span>
@@ -232,30 +178,10 @@ export default function PokemonDetails() {
                 />
               </div>
 
-              <div>
-                {pokemon?.stats.map((stat) => (
-                  <div
-                    key={uuvid()}
-                    className="pokemonDetails_stats_valor_bar"
-                  >
-                    <p className="statsValor">
-                      {parseInt(stat.base_stat).toString().padStart(3, "0")}
-                    </p>
-                    <div
-                      className={`statsBar_progress statsBar_progress_pokemon-type--${
-                        pokemon?.types?.[0]?.type.name ?? "normal"
-                      }`}
-                    >
-                      <div
-                        className={`statsBar statsBar_pokemon-type--${
-                          pokemon?.types?.[0]?.type.name ?? "normal"
-                        }`}
-                        style={{ width: `${(stat.base_stat / 50) * 100}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <PokemonStats
+                stats={pokemon?.stats}
+                types={pokemon?.types}
+              />
             </div>
           </div>
         </section>
