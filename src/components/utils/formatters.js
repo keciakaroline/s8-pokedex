@@ -13,7 +13,7 @@ export const formatId = (id) => {
 };
 
 export const pokemonType = (types) => {
-  return `${types?.[0]?.type.name} ?? "normal"`;
+  return `${types?.[0]?.type.name}` ?? "normal";
 };
 
 export const formatStat = (stat) => {
