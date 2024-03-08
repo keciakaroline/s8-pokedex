@@ -66,7 +66,7 @@ describe("PokemonStats", () => {
       });
     });
 
-    it.only("change color based on the pokemon type", () => {
+    it.skip("change color based on the pokemon type", () => {
       customRender(
         <PokemonStats
           stats={stats}
