@@ -236,30 +236,6 @@ export default function PokemonDetails() {
                 stats={pokemon?.stats}
                 types={pokemon?.types}
               />
-              {/* <div>
-              {pokemon?.stats.map((stat) => (
-                  <div
-                    key={uuvid()}
-                    className="pokemonDetails_stats_valor_bar"
-                  >
-                    <p className="statsValor">
-                      {parseInt(stat.base_stat).toString().padStart(3, "0")}
-                    </p>
-                    <div
-                      className={`statsBar_progress statsBar_progress_pokemon-type--${
-                        pokemon?.types?.[0]?.type.name ?? "normal"
-                      }`}
-                    >
-                      <div
-                        className={`statsBar statsBar_pokemon-type--${
-                          pokemon?.types?.[0]?.type.name ?? "normal"
-                        }`}
-                        style={{ width: `${(stat.base_stat / 50) * 100}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
             </div>
           </div>
         </section>
