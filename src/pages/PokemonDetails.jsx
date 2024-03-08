@@ -10,6 +10,7 @@ import straighten from "../assets/icons/straighten.svg";
 import arrow_left from "../assets/icons/arrow_left.svg";
 import arrow_right from "../assets/icons/arrow_right.svg";
 import { cleanFlavorText, turnDecimal } from "../components/utils/formatters";
+import PokemonStats from "../components/PokemonStats";
 
 export default function PokemonDetails() {
   const { id } = useParams();
@@ -231,8 +232,12 @@ export default function PokemonDetails() {
                 />
               </div>
 
-              <div>
-                {pokemon?.stats.map((stat) => (
+              <PokemonStats
+                stats={pokemon?.stats}
+                types={pokemon?.types}
+              />
+              {/* <div>
+              {pokemon?.stats.map((stat) => (
                   <div
                     key={uuvid()}
                     className="pokemonDetails_stats_valor_bar"
@@ -254,7 +259,7 @@ export default function PokemonDetails() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
