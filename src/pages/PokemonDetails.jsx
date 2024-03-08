@@ -5,12 +5,11 @@ import { usePokemonByName } from "../hooks/usePokemonByName";
 import "./PokemonDetails.css";
 import backArrow from "../assets/icons/back_arrow.svg";
 import divider from "../assets/icons/divider.svg";
-import weight from "../assets/icons/weight.svg";
-import straighten from "../assets/icons/straighten.svg";
 import arrow_left from "../assets/icons/arrow_left.svg";
 import arrow_right from "../assets/icons/arrow_right.svg";
-import { cleanFlavorText, turnDecimal } from "../components/utils/formatters";
+import { cleanFlavorText } from "../components/utils/formatters";
 import PokemonStats from "../components/PokemonStats";
+import PokemonAboutDetails from "../components/PokemonAboutDetails";
 
 export default function PokemonDetails() {
   const { id } = useParams();
@@ -126,66 +125,13 @@ export default function PokemonDetails() {
             >
               About
             </h2>
-            <div className="pokemonDetails_body">
-              <div className="pokemonDetails_section_weight">
-                <div className="pokemonDetails_img_and_valor">
-                  <img
-                    className="pokemon_weight_img"
-                    src={weight}
-                    alt={`${pokemon?.name} weight`}
-                  />
-                  <p className="pokemon_weight_title">
-                    {turnDecimal(pokemon?.weight)}Kg
-                  </p>
-                </div>
 
-                <div className="pokemon_details_weight">Weight</div>
-              </div>
-
-              <div>
-                <img
-                  className="divider"
-                  src={divider}
-                  alt="divider"
-                />
-              </div>
-
-              <div className="pokemonDetails_section_height">
-                <div className="pokemonDetails_img_and_valor">
-                  <img
-                    className="pokemon_height_img"
-                    src={straighten}
-                    alt={`${pokemon?.name} height`}
-                  />
-                  <p className="pokemon_height_title">
-                    {turnDecimal(pokemon?.height)}m
-                  </p>
-                </div>
-                <div className="pokemon_details_height">Height</div>
-              </div>
-
-              <div>
-                <img
-                  className="divider"
-                  src={divider}
-                  alt="divider"
-                />
-              </div>
-
-              <div className="pokemonDetails_section_abilities">
-                <div className="pokemonDetails_abilities">
-                  {pokemon?.abilities.map((ability) => (
-                    <div
-                      key={uuvid()}
-                      className="ability"
-                    >
-                      {ability.ability.name}
-                    </div>
-                  ))}
-                </div>
-                <div className="pokemon_details_abilities">Moves</div>
-              </div>
-            </div>
+            <PokemonAboutDetails
+              name={pokemon?.name}
+              weight={pokemon?.weight}
+              height={pokemon?.height}
+              abilities={pokemon?.abilities}
+            />
           </div>
 
           <div className="pokemonDetails_flavorText">
