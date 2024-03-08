@@ -7,7 +7,7 @@ import backArrow from "../assets/icons/back_arrow.svg";
 import divider from "../assets/icons/divider.svg";
 import arrow_left from "../assets/icons/arrow_left.svg";
 import arrow_right from "../assets/icons/arrow_right.svg";
-import { cleanFlavorText } from "../components/utils/formatters";
+import { cleanFlavorText, pokemonType } from "../components/utils/formatters";
 import PokemonStats from "../components/PokemonStats";
 import PokemonAboutDetails from "../components/PokemonAboutDetails";
 
@@ -51,9 +51,9 @@ export default function PokemonDetails() {
   return (
     <>
       <div
-        className={`pokemonDetails_main pokemon-type--${
-          pokemon?.types?.[0]?.type.name ?? "normal"
-        }`}
+        className={`pokemonDetails_main pokemon-type--${pokemonType(
+          pokemon?.types
+        )}`}
       >
         <header className="pokemonDetails_header">
           <Link
@@ -119,9 +119,9 @@ export default function PokemonDetails() {
 
           <div>
             <h2
-              className={`title_pokemonDetails_pokemon-type--${
-                pokemon?.types?.[0]?.type.name ?? "normal"
-              }`}
+              className={`title_pokemonDetails_pokemon-type--${pokemonType(
+                pokemon?.types
+              )}`}
             >
               About
             </h2>
@@ -146,9 +146,9 @@ export default function PokemonDetails() {
 
           <div className="pokemonDetails_stats">
             <h2
-              className={`title_pokemonDetails_pokemon-type--${
-                pokemon?.types?.[0]?.type.name ?? "normal"
-              }`}
+              className={`title_pokemonDetails_pokemon-type--${pokemonType(
+                pokemon?.types
+              )}`}
             >
               Base Stats
             </h2>
@@ -160,9 +160,9 @@ export default function PokemonDetails() {
                     className="pokemonDetails_stats_name"
                   >
                     <span
-                      className={`statsName stat_pokemonDetails_pokemon-type--${
-                        pokemon?.types?.[0]?.type.name ?? "normal"
-                      }`}
+                      className={`statsName stat_pokemonDetails_pokemon-type--${pokemonType(
+                        pokemon?.types
+                      )}`}
                     >
                       {statNames[stat.stat.name]}
                     </span>
